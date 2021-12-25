@@ -24,9 +24,9 @@ from torch.utils.data import (
 )  # Gives easier dataset managment and creates mini batches
 
 
-class CatsAndDogsDataset(Dataset):
+class FacialParalysisDataset(Dataset):
     def __init__(self, csv_file, root_dir, transform=None):
-        self.annotations = pd.read_csv(csv_file)
+        self.annotations = file = pd.read_csv(csv_file, header=None)
         self.root_dir = root_dir
         self.transform = transform
 
@@ -56,7 +56,7 @@ num_epochs = 10
 
 # Load Data
 dataset = CatsAndDogsDataset(
-    csv_file="cats_dogs.csv",
+    csv_file="projectfacp.csv",
     root_dir="cats_dogs_resized",
     transform=transforms.ToTensor(),
 )
